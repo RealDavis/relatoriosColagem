@@ -1,0 +1,39 @@
+body { 
+    background-image: -ms-linear-gradient(top left, #2091C9 0%, #61B5FE 50%, #0A488F 100%); 
+    background-image: -moz-linear-gradient(top left, #2091C9 0%, #61B5FE 50%, #0A488F 100%);
+    background-image: -o-linear-gradient(top left, #2091C9 0%, #61B5FE 50%, #0A488F 100%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2091C9), color-stop(50, #61B5FE), color-stop(100, #0A488F));
+    background-image: -webkit-linear-gradient(top left, #2091C9 0%, #61B5FE 50%, #0A488F 100%);
+    background-image: linear-gradient(to bottom right, #2091C9 0%, #61B5FE 50%, #0A488F 100%);
+    }
+
+.container {
+    background-color: #FFF;
+    height: 100vh;
+    padding: 15px 15px 0px;
+}
+
+button:active {
+    text-shadow: 2px 2px 2px #000;
+    -webkit-transform:translate(0px, 2px);
+    -moz-transform:translate(0px, 2px);
+    -o-transform:translate(0px, 2px);
+    transform:translate(0px, 2px);
+}
+
+@media screen and (max-width: 470px) {
+    button[type='reset']{
+        margin-top: 9px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 471px) {
+    button {
+        min-width: 175px;
+        margin: 10px;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--favicon-->
+    <link rel="shortcut icon" href="img/favico.png"/>
+    <!--css aplicação-->
+    <link type="text/css" rel="stylesheet" href="css/form.css">
+    <title>Relatórios de colagem</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <div class="nav-wrapper #424242 grey darken-3">
+                <a href="#!" class="brand-logo center">Relatórios de colagem</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="row">
+            <div id="form-container">
+                <form action="#" id="formulario">
+                    <!--produto e SLO-->
+                    <section class="row" id="nome-slo">
+                        <div class="input-field col s12 m8">
+                            <input id="produto" name="produto" type="text" class="validate">
+                            <label for="produto">Produto</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input id="slo" name="slo" type="number" class="validate">
+                            <label for="slo">SLO</label> 
+                        </div>
+                    </section>  
+                    <!--quantidades-->
+                    <section class="row" id="quantidades">
+                        <div class="input-field col s6 m3">
+                            <input id="quantidade01" name="quantidade01" type="number" class="validate">
+                            <label for="quantidade01">Quantidade 01</label> 
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input id="quantidade02" name="quantidade02" type="number" class="validate">
+                            <label for="quantidade02">Quantidade 02</label> 
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input id="quantidade03" name="quantidade03" type="number" class="validate">
+                            <label for="quantidade03">Quantidade 03</label> 
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input id="quantidade04" name="quantidade04" type="number" class="validate">
+                            <label for="quantidade04">Quantidade 04</label> 
+                        </div>
+                    </section>
+                    <!--observações-->
+                    <section class="row" id="observacoes">
+                        <div class="input-field col s12">
+                            <textarea id="campoObservacoes" name="campoObservacoes" class="materialize-textarea" data-length="500"></textarea>
+                            <label for="campoObservacoes">Observações</label>
+                        </div>
+                    </section>
+                    <!--botões-->
+                    <section class="row" id="botoes">
+                        <div class="center-align">
+                            <button class="btn waves-effect waves-light btn-large hoverable #00897b teal darken-1" type="button" 
+                            name="btnRelatorio" onclick="RelatorioController.run()">
+                                Gerar relatório<i class="material-icons right"><img src="img/report.png"></i>
+                            </button>
+                            <button class="btn waves-effect waves-light btn-large hoverable #c62828 red darken-3" type="reset" name="btnLimpar">Limpar
+                                <i class="material-icons right"><img src="img/clear.png"></i>
+                            </button>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="js/SystemFiles/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/SystemFiles/materialize.min.js"></script>
+    <script type="text/javascript" src="js/SystemFiles/textArea.js"></script>
+    <script type="text/javascript" src="js/Controllers/RelatorioController.js"></script>
+
+</body>
