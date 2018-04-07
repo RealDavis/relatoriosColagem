@@ -15,7 +15,7 @@
     <title>Relatórios de colagem</title>
 </head>
 
-<body>
+<body onload="new LocalStorageController().verifySupport()">
     <header class="navbar">
         <nav>
             <div class="nav-wrapper #424242 grey darken-3">
@@ -27,7 +27,7 @@
     <div class="container">
         <main class="row">
             <div id="form-container">
-                <form action="#" id="formulario">
+                <form action="#" id="formulario" onsubmit="return RelatorioController.run()">
                     <!--produto e SLO-->
                     <section class="row" id="nome-slo">
                         <div class="input-field col s12 m8">
@@ -68,8 +68,8 @@
                     <!--botões-->
                     <section class="row" id="botoes">
                         <div class="center-align">
-                            <button class="btn waves-effect waves-light btn-large hoverable #00897b teal darken-1" type="button" 
-                            name="btnRelatorio" onclick="RelatorioController.run()">
+                            <button class="btn waves-effect waves-light btn-large hoverable #00897b teal darken-1" type="submit"
+                            id="btnRelatorio" disabled>
                                 Gerar relatório<i class="material-icons right"><img src="img/report.png"></i>
                             </button>
                             <button class="btn waves-effect waves-light btn-large hoverable #c62828 red darken-3" type="reset" name="btnLimpar">Limpar
@@ -78,6 +78,13 @@
                         </div>
                     </section>
                 </form>
+
+                <!--mensagens de erro-->
+                <section id="msgErro">
+                    <div class="card-panel #f44336 red">
+                        <span class="white-text msgErroContent"></span>
+                    </div>
+                </section>
             </div>
         </main>
     </div>
@@ -86,5 +93,12 @@
     <script type="text/javascript" src="js/SystemFiles/materialize.min.js"></script>
     <script type="text/javascript" src="js/SystemFiles/textArea.js"></script>
     <script type="text/javascript" src="js/Controllers/RelatorioController.js"></script>
+    <script type="text/javascript" src="js/Models/DTO/RelatorioDTO.js"></script>
+    <script type="text/javascript" src="js/Models/DAO/RelatorioDAO.js"></script>
+    <script type="text/javascript" src="js/ViewHandlers/InputHandler.js"></script>
+    <script type="text/javascript" src="js/ViewHandlers/EnableHandler.js"></script>
+    <script type="text/javascript" src="js/Controllers/LocalStorageController.js"></script>
+    <script type="text/javascript" src="js/ViewHandlers/VisibilityHandler.js"></script>
+    <script type="text/javascript" src="js/ViewHandlers/ContentTextHandler.js"></script>
 
 </body>

@@ -1,51 +1,43 @@
+let atributes = new WeakMap();
+
 class RelatorioDTO {
 
-    constructor(produto, slo, data, quantidades, observacoes) {
-        this.produto = produto;
-        this.slo = slo;
-        this.data = data;
-        this.quantidades = quantidades;
-        this.observacoes = observacoes;
+    constructor(produto, slo, quantidades, observacoes) {
+        atributes.set(this, {
+            produto, slo, quantidades, observacoes
+        });
     }
 
     getProduto() {
-        return this.produto;
+        return atributes.get(this)['produto'];
     }
 
-    setProduto() {
-        this.produto = produto;
+    setProduto(produto) {
+        atributes.set(this,{produto});
     }
 
     getSlo() {
-        return this.slo;
+        return atributes.get(this)['slo'];
     }
 
-    setSlo() {
-        this.slo = slo;
-    }
-
-    getData() {
-        return this.data;
-    }
-
-    setData() {
-        this.data = data;
+    setSlo(slo) {
+        atributes.set(this,{slo});
     }
 
     getQuantidades() {
-        return this.quantidades;
+        return atributes.get(this)['quantidades'];
     }
 
-    setQuantidades() {
-        this.quantidades = quantidades;
+    setQuantidades(quantidades) {
+        atributes.set(this,{quantidades});
     }
 
     getObservacoes() {
-        return this.observacoes;
+        return atributes.get(this)['observacoes'];
     }
 
-    setObservacoes() {
-        this.observacoes = observacoes;
+    setObservacoes(observacoes) {
+        atributes.set(this,{observacoes});
     }
 
 }

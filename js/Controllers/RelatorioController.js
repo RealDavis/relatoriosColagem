@@ -1,16 +1,34 @@
 class RelatorioController {
 
     static run() {
-        let produto = document.querySelector("#produto").value;
-        alert(produto);
-        let slo = document.querySelector("#slo").value;
-        let quantidade01 = document.querySelector("#quantidade01").value;
-        let quantidade02 = document.querySelector("#quantidade02").value;
-        let quantidade03 = document.querySelector("#quantidade03").value;
-        let quantidade04 = document.querySelector("#quantidade04").value;
-        let observacoes = document.querySelector("#campoObservacoes").value;
+        alert("begin");
 
-        alert(observacoes);
+
+
+
+
+
+
+        let inputhandler = new InputHandler();
+        let produto = inputhandler.getInputValue("#produto");
+        let slo = inputhandler.getInputValue("#slo");
+        let quantidade01 = inputhandler.getInputValue("#quantidade01");
+        let quantidade02 = inputhandler.getInputValue("#quantidade02");
+        let quantidade03 = inputhandler.getInputValue("#quantidade03");
+        let quantidade04 = inputhandler.getInputValue("#quantidade04");
+        let observacoes = inputhandler.getInputValue("#campoObservacoes");
+
+        let dto = new RelatorioDTO(produto, slo, quantidade01, observacoes);
+        alert("relatorio instanciado");
+
+
+        let dao = new RelatorioDAO();
+        dao.salvar();
+
+
+
+
+        return false;
     }
 
 }
