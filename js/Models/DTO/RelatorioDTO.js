@@ -40,4 +40,13 @@ class RelatorioDTO {
         atributes.set(this,{observacoes});
     }
 
+    toJSON() {
+        return JSON.stringify({
+            produto     : this.getProduto(),
+            slo         : this.getSlo(),
+            quantidade  : this.getQuantidades(),
+            observacoes : this.getObservacoes()
+        });
+    }
+
 }

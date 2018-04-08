@@ -31,37 +31,38 @@
                     <!--produto e SLO-->
                     <section class="row" id="nome-slo">
                         <div class="input-field col s12 m8">
-                            <input id="produto" name="produto" type="text" class="validate">
+                            <input id="produto" name="produto" type="text" class="validate" required>
                             <label for="produto">Produto</label>
                         </div>
                         <div class="input-field col s12 m4">
-                            <input id="slo" name="slo" type="number" class="validate">
+                            <input id="slo" name="slo" type="number" class="validate" required min="1" pattern="[0-9]+$" required>
                             <label for="slo">SLO</label> 
                         </div>
                     </section>  
                     <!--quantidades-->
                     <section class="row" id="quantidades">
                         <div class="input-field col s6 m3">
-                            <input id="quantidade01" name="quantidade01" type="number" class="validate">
+                            <input id="quantidade01" name="quantidade01" type="number" class="validate" min="0" pattern="[0-9]+$">
                             <label for="quantidade01">Quantidade 01</label> 
                         </div>
                         <div class="input-field col s6 m3">
-                            <input id="quantidade02" name="quantidade02" type="number" class="validate">
+                            <input id="quantidade02" name="quantidade02" type="number" class="validate" min="0" pattern="[0-9]+$">
                             <label for="quantidade02">Quantidade 02</label> 
                         </div>
                         <div class="input-field col s6 m3">
-                            <input id="quantidade03" name="quantidade03" type="number" class="validate">
+                            <input id="quantidade03" name="quantidade03" type="number" class="validate" min="0" pattern="[0-9]+$">
                             <label for="quantidade03">Quantidade 03</label> 
                         </div>
                         <div class="input-field col s6 m3">
-                            <input id="quantidade04" name="quantidade04" type="number" class="validate">
+                            <input id="quantidade04" name="quantidade04" type="number" class="validate" min="0" pattern="[0-9]+$">
                             <label for="quantidade04">Quantidade 04</label> 
                         </div>
                     </section>
                     <!--observações-->
                     <section class="row" id="observacoes">
                         <div class="input-field col s12">
-                            <textarea id="campoObservacoes" name="campoObservacoes" class="materialize-textarea" data-length="500"></textarea>
+                            <textarea id="campoObservacoes" name="campoObservacoes" class="materialize-textarea validate"
+                                      maxlength="500"></textarea>
                             <label for="campoObservacoes">Observações</label>
                         </div>
                     </section>
@@ -72,7 +73,8 @@
                             id="btnRelatorio" disabled>
                                 Gerar relatório<i class="material-icons right"><img src="img/report.png"></i>
                             </button>
-                            <button class="btn waves-effect waves-light btn-large hoverable #c62828 red darken-3" type="reset" name="btnLimpar">Limpar
+                            <button class="btn waves-effect waves-light btn-large hoverable #c62828 red darken-3"
+                                    type="reset" name="btnLimpar" onclick="VisibilityHandler.setElementHidden('#msgErro')">Limpar
                                 <i class="material-icons right"><img src="img/clear.png"></i>
                             </button>
                         </div>
@@ -82,7 +84,7 @@
                 <!--mensagens de erro-->
                 <section id="msgErro">
                     <div class="card-panel #f44336 red">
-                        <span class="white-text msgErroContent"></span>
+                        <span class="white-text" id="msgErroContent"></span>
                     </div>
                 </section>
             </div>
@@ -95,10 +97,13 @@
     <script type="text/javascript" src="js/Controllers/RelatorioController.js"></script>
     <script type="text/javascript" src="js/Models/DTO/RelatorioDTO.js"></script>
     <script type="text/javascript" src="js/Models/DAO/RelatorioDAO.js"></script>
-    <script type="text/javascript" src="js/ViewHandlers/InputHandler.js"></script>
-    <script type="text/javascript" src="js/ViewHandlers/EnableHandler.js"></script>
+    <script type="text/javascript" src="js/Lib/ViewHandlers/InputHandler.js"></script>
+    <script type="text/javascript" src="js/Lib/ViewHandlers/EnableHandler.js"></script>
     <script type="text/javascript" src="js/Controllers/LocalStorageController.js"></script>
-    <script type="text/javascript" src="js/ViewHandlers/VisibilityHandler.js"></script>
-    <script type="text/javascript" src="js/ViewHandlers/ContentTextHandler.js"></script>
+    <script type="text/javascript" src="js/Lib/ViewHandlers/VisibilityHandler.js"></script>
+    <script type="text/javascript" src="js/Lib/ViewHandlers/ContentTextHandler.js"></script>
+    <script type="text/javascript" src="js/Models/Validator/RelatorioValidator.js"></script>
+    <script type="text/javascript" src="js/Models/Validator/ResultadoValidacao.js"></script>
+    <script type="text/javascript" src="js/Lib/Util/FilterData.js"></script>
 
 </body>

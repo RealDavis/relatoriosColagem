@@ -1,7 +1,7 @@
 class VisibilityHandler {
 
     static setElementVisible(id) {
-        document.querySelector(id).className = "elementVisible";
+        document.querySelector(id).style.display = "block";
     }
 
     static setElementHidden(id) {

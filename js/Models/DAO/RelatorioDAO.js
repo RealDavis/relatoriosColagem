@@ -2,8 +2,9 @@ class RelatorioDAO {
 
     constructor(){}
 
-    salvar() {
-
+    salvar(dto) {
+        let storage = new LocalStorageController();
+        storage.salvar("relatorio", dto);
     }
 
 }
