@@ -12,6 +12,14 @@ class RelatorioValidator {
         } else if(Number.isInteger(parseInt(dto.getSlo())) === false) {
             resultado.set('slo', 'O campo \"SLO\" deve ser um numero');
         }
+        
+        let quantidades = dto.getQuantidades();
+        for (let i = 0; i < quantidades.length; i++) {
+            if(!parseFloat(quantidades[i])) {
+                resultado.set('quantidade', 'Os campos \"Quantidade\" devem ser numeros');
+                break;
+            }
+        }
 
         /*if(dto.getQuantidades() === null || dto.getQuantidades() === undefined
             || dto.getQuantidades() === "" || dto.getQuantidades().length === 0) {
