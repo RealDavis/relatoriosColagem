@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!--Import Google Icon Font-->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--favicon-->
+    <link rel="shortcut icon" href="img/favico.png"/>
+    <link rel="stylesheet" href="css/printReport.css">
+    <title>Relatórios de colagem</title>
+</head>
+
+<body onload="PrintReportController.preencherCampos()">
+
+    <div class="container">
+        <h1>Aprovação de colagem na cartucheira</h1>
+        <main>
+            <section>
+                <p><span class="campo">Produto: </span><span id="produtoField"></span> <span class="campo">SLO: </span><span id="sloField"></span></p>
+                <p><span class="campo">Data: </span><span id="dataField"></span></p>
+                <p><span class="campo">Quantidades: </span><span id="quantidadesField">________/________/________/________</span></p>
+            </section>
+
+            <section>
+                <p>Pontos de cola fria(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)  Tipo:______________________</p>
+                <p>Pontos de cola quente(&nbsp;&nbsp;&nbsp;&nbsp;)  Tipo:______________________</p>
+                <p>Setup:_____________________  Produção/hora:_____________________</p>
+                <p>(&nbsp;&nbsp;)1 passada / ( &nbsp;&nbsp;)2 passadas / ( &nbsp;&nbsp;)Colagem inviável</p>
+            </section>
+
+            <section>
+                <div id="obsCad">
+                    <h4>Observações do CAD</h4>
+                    <span id="obsCadContent"></span>
+                </div>
+                <div id="obsSupervisor">
+                    <h4>Observações do supervisor</h4>
+                    <p class="obsSupervisorContent"></p><br>
+                    <p class="obsSupervisorContent"></p><br>
+                    <p class="obsSupervisorContent"></p><br>
+                    <p class="obsSupervisorContent"></p><br>
+                </div>
+            </section>
+        </main>
+
+        <button onclick="window.print()">Imprimir</button>
+    </div>
+
+    <script src="js/Controllers/PrintReportController.js"></script>
+    <script src="js/Controllers/LocalStorageController.js"></script>
+    <script src="js/Models/DTO/RelatorioDTO.js"></script>
+    <script src="js/Models/DAO/RelatorioDAO.js"></script>
+    <script src="js/Lib/Util/DateHandler.js"></script>
+    <script src="js/Lib/ViewHandlers/ContentTextHandler.js"></script>
+
+
+
+</body>

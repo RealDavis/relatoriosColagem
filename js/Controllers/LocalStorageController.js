@@ -23,4 +23,8 @@ class LocalStorageController {
         }
     }
 
+    recuperar(key) {
+        return window.localStorage.getItem(key);
+    }
+
 }

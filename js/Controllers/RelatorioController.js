@@ -1,6 +1,6 @@
 class RelatorioController {
 
-    static run() {
+    static index() {
         let inputhandler = new InputHandler();
         let filter = new FilterData();
 
@@ -36,6 +36,10 @@ class RelatorioController {
 
         let form = document.querySelector("#formulario").reset();
         VisibilityHandler.setElementHidden("#msgErro");
+
+        let printReport = new PrintReportController();
+        printReport.index();
+
         return false;
     }
 

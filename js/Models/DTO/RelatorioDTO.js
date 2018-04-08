@@ -44,7 +44,7 @@ class RelatorioDTO {
         return JSON.stringify({
             produto     : this.getProduto(),
             slo         : this.getSlo(),
-            quantidade  : this.getQuantidades(),
+            quantidades : this.getQuantidades(),
             observacoes : this.getObservacoes()
         });
     }
